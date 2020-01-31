@@ -33,9 +33,9 @@
           <spdx:DisjunctiveLicenseSet>
   {% for res in mainLicenses %}
   {% if res starts with 'LicenseRef-' %}
-            <spdx:member rdf:resource="{{ uri }}#{{ res|replace(' ','-')|url_encode }}" />
+            <spdx:member rdf:resource="{{ uri }}#{{ res|replace(' ','-')}}" />
   {% else %}
-            <spdx:member rdf:resource="http://spdx.org/licenses/{{ res|replace(' ','-')|url_encode }}" />
+            <spdx:member rdf:resource="http://spdx.org/licenses/{{ res|replace(' ','-')}}" />
   {% endif %}
   {% endfor %}
           </spdx:DisjunctiveLicenseSet>
@@ -46,7 +46,7 @@
         <spdx:licenseConcluded rdf:resource="http://spdx.org/rdf/terms#noassertion" />
         {% endif %}<spdx:licenseDeclared rdf:resource="http://spdx.org/rdf/terms#noassertion" />
         <spdx:licenseInfoFromFiles rdf:resource="http://spdx.org/rdf/terms#noassertion" />
-        <spdx:copyrightText rdf:resource="http://spdx.org/rdf/terms#noassertion" />
+        <spdx:copyrightText />
         {{ fileNodes|replace({'\n':'\n          '}) }}
       </spdx:Package>
     </spdx:relatedSpdxElement>
